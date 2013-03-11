@@ -1,0 +1,22 @@
+{
+  "version": "0.0.0",
+  "name": "require-updated",
+  "description": "",
+  "homepage": "https://github.com/WebReflection/require-updated",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "web": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WebReflection/require-updated.git"
+  },
+  "main": "./build/require-updated.node.js",
+  "scripts": {
+    "test": "node test/.test.js"
+  },
+  "dependencies": {
+    "wru": ">= 0.0.0"
+  }
+}
