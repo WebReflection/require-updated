@@ -1,12 +1,12 @@
 {
-  "version": "0.0.0",
+  "version": "0.1.0",
   "name": "require-updated",
-  "description": "",
+  "description": "node.js require with watcher to simplify local modules development",
   "homepage": "https://github.com/WebReflection/require-updated",
-  "keywords": [],
+  "keywords": ["require", "watch", "autoload", "polpetta"],
   "author": {
-    "name": "",
-    "web": ""
+    "name": "Andrea Giammarchi",
+    "web": "http://webreflection.blogspot.com/"
   },
   "repository": {
     "type": "git",
