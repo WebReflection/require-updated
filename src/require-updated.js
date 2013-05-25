@@ -1,19 +1,23 @@
-function(re, fs, path){
-  // (C) WebReflection - Mit Style License
-  function watcher(
-    /* event, filename */
-  ) {
-    this.close();
-    delete require.cache[this.filename];
-  }
-  return function requireUpdated(filename) {
-    return re.test(filename) && (
-      (filename = path.resolve(filename)) in require.cache ||
-      (fs.watch(filename, watcher).filename = filename)
-    ), require(filename);
-  };
-}(
-  /^(?:\.|\/|\\|[A-Z]:)/,
-  require('fs'),
-  require('path')
-)
+var re = /^(?:\.|\/|\\|[A-Z]:)/;
+var fs = require("fs");
+
+module.exports = function createRequireUpdated(require) {
+    return function requireUpdated(filename) {
+        var isThing = re.test(filename)
+
+        if (isThing) {
+            filename = require.resolve(filename)
+
+            var inCache = (filename in require.cache)
+
+            if (!inCache) {
+                fs.watch(filename, function () {
+                    this.close();
+                    delete require.cache[filename]
+                })
+            }
+        }
+
+        return require(filename)
+    };
+}
