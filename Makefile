@@ -1,4 +1,4 @@
-.PHONY: var node amd size hint clean test web preview pages dependencies
+.PHONY: var node amd size hint clean test web preview pages dependencies build
 
 # repository name
 REPO = require-updated

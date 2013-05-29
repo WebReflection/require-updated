@@ -1,4 +1,4 @@
-function(re, fs, path){
+function(re, fs){
   // (C) WebReflection - Mit Style License
   function watcher(
     /* event, filename */
@@ -8,12 +8,11 @@ function(re, fs, path){
   }
   return function requireUpdated(filename) {
     return re.test(filename) && (
-      (filename = path.resolve(filename)) in require.cache ||
+      (filename = require.resolve(filename)) in require.cache ||
       (fs.watch(filename, watcher).filename = filename)
     ), require(filename);
   };
 }(
   /^(?:\.|\/|\\|[A-Z]:)/,
-  require('fs'),
-  require('path')
+  require('fs')
 )

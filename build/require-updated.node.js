@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 */
-module.exports = function(re, fs, path){
+module.exports = function(re, fs){
   // (C) WebReflection - Mit Style License
   function watcher(
     /* event, filename */
@@ -30,12 +30,11 @@ module.exports = function(re, fs, path){
   }
   return function requireUpdated(filename) {
     return re.test(filename) && (
-      (filename = path.resolve(filename)) in require.cache ||
+      (filename = require.resolve(filename)) in require.cache ||
       (fs.watch(filename, watcher).filename = filename)
     ), require(filename);
   };
 }(
   /^(?:\.|\/|\\|[A-Z]:)/,
-  require('fs'),
-  require('path')
+  require('fs')
 );
