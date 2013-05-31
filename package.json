@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": "require-updated",
   "description": "node.js require with watcher to simplify local modules development",
   "homepage": "https://github.com/WebReflection/require-updated",
