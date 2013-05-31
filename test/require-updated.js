@@ -1,7 +1,6 @@
 //remove:
 var ru = require('../build/require-updated.node.js');
 var samePath = __dirname == process.cwd();
-console.log(samePath);
 //:remove
 
 wru.test([
