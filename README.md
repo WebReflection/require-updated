@@ -3,7 +3,7 @@ require-updated
 
 node.js require with watcher to simplify local modules development
 
-[![build status](https://secure.travis-ci.org/WebReflection/require-updated.png)](http://travis-ci.org/WebReflection/require-updated)
+[![build status](https://secure.travis-ci.org/WebReflection/require-updated.svg)](http://travis-ci.org/WebReflection/require-updated)
 
 ### Simplified Reload
 [polpetta](https://github.com/WebReflection/polpetta#-polpetta) is just one of those cases where modified files could be reloaded automatically in order to have easy updates of the `.njs` logic but any module development could be simplified testing, even in console, same stuff over and over without passing manually through the require cache.
